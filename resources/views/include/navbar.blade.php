@@ -84,8 +84,8 @@
 
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                             @auth
-                                @if(Auth::user()->role[0]=='user')
-                                <a href="/myaccount" class="dropdown-item">{{ __('Logout') }}</a> 
+                                @if(Auth::user()->role=='user')
+                                <a href="/myaccount" class="dropdown-item">{{ __('My Account') }}</a> 
                                 @endif
                             @endauth
 
