@@ -25,7 +25,7 @@ class CategoriesSeeder extends Seeder
         DB::table('categories')->insert([
             'id' => 3,
             'CategoryName' => 'Paid Seminar & Workshop',
-            'CategoryPhoto' => 'paid.jpg'
+            'CategoryPhoto' => 'paid.JPG'
         ]);
     }
 }

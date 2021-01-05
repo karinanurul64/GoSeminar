@@ -59,11 +59,13 @@
                         @endcan
                         
                     </li>
-                    @can('isUser')
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('membership') }}">{{ __('Membership') }}</a>
-                    </li>
-                    @endcan
+                    @auth
+                        @if(Auth::user()->role=='user')
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('membership') }}">{{ __('Membership') }}</a>
+                        </li>
+                        @endif
+                    @endauth
                     
                     @guest  
                     <li class="nav-item">
@@ -90,9 +92,11 @@
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                 @csrf
                             </form>
-                            @can('isUser')
-                            <a href="/myaccount" class="dropdown-item">My Account</a> 
-                            @endcan
+                            @auth
+                                @if(Auth::user()->role[0]=='user')
+                                <a href="/myaccount" class="dropdown-item">My Account</a> 
+                                @endif
+                            @endauth
                             
                         </div>
 

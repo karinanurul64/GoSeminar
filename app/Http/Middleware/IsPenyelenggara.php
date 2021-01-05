@@ -15,7 +15,7 @@ class IsPenyelenggara
      */
     public function handle($request, Closure $next)
     {
-        if(auth()->check() && $request->user()->role == 'user')
+        if(auth()->check() && $request->user()->role == 'User')
         {
             return back();
         }

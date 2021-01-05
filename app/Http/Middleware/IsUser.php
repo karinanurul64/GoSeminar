@@ -15,7 +15,7 @@ class IsUser
      */
     public function handle($request, Closure $next)
     {
-        if(auth()->check() && $request->user()->role == 'penyelenggara')
+        if(auth()->check() && $request->user()->role == 'Penyelenggara')
         {
             return back();
         }
