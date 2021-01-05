@@ -83,6 +83,12 @@
                         </a>
 
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                            @auth
+                                @if(Auth::user()->role[0]=='user')
+                                <a href="/myaccount" class="dropdown-item">My Account</a> 
+                                @endif
+                            @endauth
+                            
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                onclick="event.preventDefault();
                                              document.getElementById('logout-form').submit();">
@@ -92,11 +98,6 @@
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                 @csrf
                             </form>
-                            @auth
-                                @if(Auth::user()->role[0]=='user')
-                                <a href="/myaccount" class="dropdown-item">My Account</a> 
-                                @endif
-                            @endauth
                             
                         </div>
 
