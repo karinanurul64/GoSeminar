@@ -138,7 +138,7 @@ class SeminarController extends Controller
     {
         $seminars = Seminar::find($id);
         if($seminars->Status=='Unapproved'){
-            if($seminars->User->id == Auth::user()->id){
+            if($seminars->User->id == Auth::user()){
                 return view('seminar.detail')->with('seminars', $seminars);
             }
             if(!Auth::guard('admin')->check()){
