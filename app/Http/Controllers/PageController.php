@@ -85,7 +85,7 @@ class PageController extends Controller
         } else if($enroll->count()>0){
             return redirect()->back()->with('error','You are already enrolled to this seminar'); 
         }
-        
+        $user->save();
         return redirect('myaccount')->with('success','Seminar successfully enrolled'); 
     }
 
