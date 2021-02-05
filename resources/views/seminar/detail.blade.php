@@ -9,7 +9,7 @@
 
             <div class="col-md-7 pt-3 ml-5">
                 <h2 class="font-weight-bold text-dark">{{$seminars->SeminarName}}</h2>
-                <p class="text-dark">Rp. {{$seminars->Price}}</p>
+                <p class="text-dark">@currency($seminars->Price)</p>
                 <p class="text-dark text-justify mr-4">{{$seminars->Description}}</p>
                 <p class="text-dark text-justify mr-4">Date: {{$seminars->SeminarDate}}</p>
                 <p class="text-dark text-justify mr-4">Location: {{$seminars->SeminarLocation}}</p>
