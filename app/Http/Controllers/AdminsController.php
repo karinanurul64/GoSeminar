@@ -39,4 +39,20 @@ class AdminsController extends Controller
 
         return redirect('admin/dashboard'); 
     }
+    
+       public function rejectSeminar(Request $request, $id){
+        $seminar = Seminar::find($id); 
+
+        $seminar->Status = 'Rejected'; 
+        $seminar->RejectMessage = $request->RejectMessage;
+        $seminar->save(); 
+
+        return redirect('admin/dashboard'); 
+    }
+
+    public function rejectPage($id){
+        $seminar = Seminar::find($id); 
+
+        return view('pages/reject')->with('seminar', $seminar); 
+    }
 }
