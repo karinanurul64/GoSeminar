@@ -3,7 +3,7 @@
 @section('content')
 <div class="bg-orange text-white text-center p-3">
     <h3>Hello, {{Auth::user()->name}}</h3>
-    <h5>Your credit balance : Rp {{Auth::user()->CreditBal}},00</h5>
+    <h5>Your credit balance : @currency{{Auth::user()->CreditBal}}</h5>
     
     @if (Auth::user()->membership==null)
         <button class="btn btn-outline-dark btn-dark"> <a class="text-white text-decoration-none" href="/membership"> Join Membership </a></button>
