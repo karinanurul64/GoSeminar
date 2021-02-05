@@ -11,6 +11,9 @@
             <h6 class="text-success">Status : {{$seminar->Status}}</h6>
         @else
             <h6 class="text-danger">Status : {{$seminar->Status}}</h6>
+            @if($seminar->RejectMessage!=null)
+            <h6 class="text-danger">Message from Admin : {{$seminar->RejectMessage}}</h6>
+            @endif
         @endif
         </div>
 
