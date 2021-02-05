@@ -10,7 +10,7 @@
                         <img class="card-img-top" src="{{ asset("asset/$seminar->SeminarPhoto") }}" alt="">
                         <div class="card-body">
                             <h6 class="card-title text-center font-weight-bold">{{ $seminar->SeminarName }}</h6>
-                            <p class="card-text text-center">Rp. {{$seminar->Price}}</p>
+                            <p class="card-text text-center">@currency($seminar->Price)</p>
                             <div class="text-center">
                                 <a href="/detail/{{$seminar->id}}" class="btn btn-secondary btn-lg btn-block">View Detail</a>
                             </div>
